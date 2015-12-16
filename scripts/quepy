@@ -131,7 +131,7 @@ def graph_query(app_name, question):
 
     try:
         app = quepy.install(app_name)
-    except Exception, error:
+    except Exception as error:
         #print >> sys.stderr, "Couldn't install app '%s': %s" % \
         #                     (app_name, error)
         print ("Couldn't install app {0}: {1}".format(app_name, error))
@@ -174,7 +174,7 @@ def print_tags(app_name, text):
     try:
         # Install the app to set the settings
         quepy.install(app_name)
-    except Exception, error:
+    except Exception as error:
         #print >> sys.stderr, "Couldn't install app '%s': %s" % \
         #                     (app_name, error)
         print ("Couldn't install app {0}: {1}".format(app_name, error))
@@ -214,7 +214,7 @@ def autotest(app_name):
     try:
         # Install the app to set the settings
         quepy.install(app_name)
-    except Exception, error:
+    except Exception as error:
         #print >> sys.stderr, "Couldn't install app '%s': %s" % \
         #                     (app_name, error)
         print ("Couldn't install app {0}: {1}".format(app_name, error))
