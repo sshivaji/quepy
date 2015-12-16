@@ -170,11 +170,16 @@ class Expression(object):
         assert not isnode(value)
         self.nodes[self.head].append((relation, value))
 
+    def xrange(self, x):
+        """ """
+        return iter(range(x))
+
     def iter_nodes(self):
         """
         Iterates the indexes (the unique identifiers) of the Expression nodes.
         """
-        return xrange(len(self.nodes))
+        #return xrange(len(self.nodes))
+        return self.xrange(len(self.nodes))
 
     def iter_edges(self, node):
         """

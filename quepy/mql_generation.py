@@ -25,6 +25,8 @@ def safely_to_unicode(x):
     Given an "edge" (a relation) or "a data" from an `Expression` graph
     transform it into a unicode string fitted for insertion into a MQL query.
     """
+
+    """
     if isinstance(x, unicode):
         return x
     if isinstance(x, str):
@@ -32,6 +34,14 @@ def safely_to_unicode(x):
     if isinstance(x, IsRelatedTo):
         return u"/type/reflect/any_master"
     return unicode(x)  # FIXME: Any object is unicode-able, this is error prone
+    """
+
+    if isinstance(x, str):
+        return x 
+    if isinstance(x, IsRelatedTo):
+        return u"/type/reflect/any_master"
+    message = u"Argument must be unicode or {}"
+    raise ValueError(message.format(settings.DEFAULT_ENCODING))
 
 
 def to_bidirected_graph(e):

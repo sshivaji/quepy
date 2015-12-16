@@ -35,10 +35,10 @@ def install(app_name):
     }
     modules = {}
 
-    for module_name, module_path in module_paths.iteritems():
+    for module_name, module_path in module_paths.items():
         try:
             modules[module_name] = import_module(module_path.format(app_name))
-        except ImportError, error:
+        except ImportError as error:
             message = u"Error importing {0!r}: {1}"
             raise ImportError(message.format(module_name, error))
 
