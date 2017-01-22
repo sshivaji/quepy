@@ -143,7 +143,7 @@ def _tidy(mql):
         elif text.startswith("["):
             return "[{"
         indent = 0
-        match = re.search("}[ \t]*\n(\s*?)\]", text)
+        match = re.search("}[ \t]*\n(\\s*?)\]", text)
         if match:
             indent = len(match.group(1))
         return " " * indent + "}]"
